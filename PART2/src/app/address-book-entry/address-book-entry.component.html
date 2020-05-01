@@ -1,0 +1,46 @@
+
+  <div class="col-sm-12">
+    <div *ngIf="friend">
+
+      <h3> Friend Details</h3>
+
+      <table class="table table-hover">
+
+        <tbody>
+        <tr> <td>Id:</td>
+          <td>{{friend.id}}</td> </tr>
+        <tr> <td>Name:</td>
+          <td>{{friend.name}}</td> </tr>
+        <tr> <td>Adress:</td>
+          <td>{{friend.address }}</td> </tr>
+        <tr> <td>Phone:</td>
+          <td>{{friend.phone}}</td> </tr>
+
+        </tbody>
+        <tfoot>
+        <nav>
+          <a [routerLink]="['/friends/details',  previousFriend]"
+             class="btn btn-xs btn-primary"
+             *ngIf="!(previousFriend == undefined)"
+             style="height:25px">
+            Prev
+          </a>
+
+          <a [routerLink]="['/friends/details',  nextFriend]"
+             class="btn btn-xs btn-primary"
+             *ngIf="!(nextFriend == undefined)"
+             style="height:25px">
+            Next
+          </a>
+        </nav>
+        </tfoot>
+
+      </table>
+
+
+
+    </div>
+
+  </div>
+
+

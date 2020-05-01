@@ -1,0 +1,51 @@
+h3 {
+  font-weight: bold;
+}
+
+
+table {
+  margin-top: 20px;
+}
+
+input {
+  margin-right: 10px;
+}
+
+input{
+  border-radius:10px;
+  box-shadow: 1px 1px #919191;
+}
+
+button {
+  border-radius:10px;
+  width: 160px;
+  background-color: silver;
+  font-style: italic;
+}
+button:hover{
+  background-color: #3c9256;
+  color:white;
+}
+
+tr:nth-child(odd){
+  background-color: #d3e5fd;
+}
+td {
+  height: 20px !important;
+}
+
+a {
+  text-decoration: underline;
+  color: #0000b7;
+  font-style: italic;
+}
+a:hover{
+  text-decoration: underline;
+  color: #478bd4;
+  cursor: pointer;
+}
+
+table  tr td {
+  border: .5px solid #cccccc;
+}
+

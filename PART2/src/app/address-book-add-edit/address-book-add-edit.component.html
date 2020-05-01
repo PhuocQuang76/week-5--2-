@@ -1,0 +1,36 @@
+<div class="side-form">
+  <h3>{{title}}</h3>
+
+  <div class="form-container">
+    <form (ngSubmit)="saveFriend()">
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input type="text" name="id" [(ngModel)]="friend.id"
+               [disabled]="friend.id" class="form-control" required />
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" [(ngModel)]="friend.name" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label for="adress">Address</label>
+        <input type="text" name="address" [(ngModel)]="friend.address" class="form-control" required />
+
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" [(ngModel)]="friend.phone"   class="form-control" required />
+      </div>
+
+
+
+      <div class="form-group">
+        <a class="btn btn-default" routerLink="/friends" class="btn btn-primary" style="height:25px">Cancel</a>
+        <button class="btn btn-primary" style="height:25px">Save</button>
+      </div>
+    </form>
+  </div>
+  <p>Note:<br> Name, Adress, Phone can not be empty. <br>Phone number have to be 10 degits.<br>Phone number is unite.</p>
+</div>

@@ -1,0 +1,49 @@
+
+
+<div class="container">
+
+  <input type="text" #from
+         value="Boston, MA"
+         placeholder="From"
+         (blur)="blur(from.value, to.value)"
+         (keyup)="getDirection(from.value, to.value)">
+
+  <input type="text" #to
+         value="Cambridge,MA"
+         placeholder="To"
+         placeholder="To"
+         (blur)="blur(from.value, to.value)"
+         (keyup)="getDirection(from.value, to.value)">
+
+  <button (click)="getDirection(from.value, to.value)">Get Directions</button>
+
+
+  <div class="container-fluid">
+
+    <table class="table table-bordered table-striped"
+           *ngIf="dataItems && dataItems.route && dataItems.route.legs && dataItems.route.legs.length > 0">
+
+
+        <tr class="text-center bg-danger" style="font-size: 18px; font-weight:bold" >
+          <th colspan="4">Distance: {{dataItems.route.distance | number:'1.0-0'}}m - Time: {{ dataItems.route.formattedTime}}</th>
+
+        </tr>
+
+        <tr *ngFor="let direction of dataItems.route.legs[0].maneuvers">
+          <td width = "5px">
+            <img src="{{ direction.iconUrl }}" width='35' height='15' />
+          </td>
+          <td width = "1px">{{ direction.index + 1 }}.</td>
+          <td width = "300px">
+            <a (click)="aclick(direction.mapUrl)">
+              {{ direction.narrative }}
+            </a>
+
+          </td>
+          <td width = "5px">{{ direction.distance | number:'1.2-2'}}m</td>
+        </tr>
+
+    </table>
+
+  </div>
+</div>

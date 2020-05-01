@@ -1,0 +1,33 @@
+<div class = "row">
+
+  <div class="col-sm-6">
+    <h4>Current Contacts</h4>
+
+    <ul class = "courses">
+      <li *ngFor="let friend of friends" style="height:25px">
+          <a [routerLink]="['details',  friend.id ]" class="float-left">{{friend.name}}</a>
+          <a [routerLink]="['edit', friend.id]" class="btn btn-xs btn-primary float-right" style="height:25px">Edit</a>
+
+
+          <!--<button  class="btn btn-xs btn-primary float-right" style="height:30px" (click)="onDelete(friend)" >Delete</button>-->
+        <a [routerLink]="['delete', friend.id]" class="btn btn-xs btn-primary float-right" style="height:25px">Delete</a>
+
+      </li>
+
+    </ul>
+
+
+      <a routerLink="add" class="btn btn-xs btn-primary" style="height:25px">
+        Add New Contact
+      </a>
+
+
+  </div>
+
+  <div class="col-sm-1"></div>
+  <div class="col-sm-5">
+    <router-outlet></router-outlet>
+  </div>
+
+
+</div>
